@@ -144,7 +144,7 @@ static inline ggml_fp16_t ggml_compute_fp32_to_fp16(float f) {
         memcpy(&res, &tmp, sizeof(ggml_fp16_t));
         return res;
     }
-#elif defined(__riscv) && defined(__riscv_zfhmin)
+#elif defined(__riscv_xtheadvector) && defined(__riscv_zfhmin)
     static inline float riscv_compute_fp16_to_fp32(ggml_fp16_t h) {
         float f;
         __asm__(

@@ -94,7 +94,7 @@ void ggml_rmsnorm_f32_baseline(int n, float *y, const float *x, float eps) {
         "th.vfmv.f.s %[sum_out], v24\n\t"
         : [sum_out] "=f"(sum_sq_f), [x_ptr] "+r"(x), [n_in] "+r"(n)
         : 
-        : "v0", "t0", "t1", "v1", "t2", "v2", "t3", "v3", "v4", "v5", "v6", "v7", "v8", "v9", "v10", "v11", "v12", "v13", "v14", "v15", "v16", "v17", "v18", "v19", "v20", "v21", "v22", "v23", "v24", "v25", "v26", "v27", "fa0", "memory"    );
+        : "t0", "v0", "t1", "v1", "t2", "v2", "v3", "t3", "v4", "v5", "v6", "v7", "v8", "v9", "v10", "v11", "v12", "v13", "v14", "v15", "v16", "v17", "v18", "v19", "v20", "v21", "v22", "v23", "v24", "v25", "v26", "v27", "fa0", "memory"    );
 
     const float mean = sum_sq_f / (float)n;
     const float scale = 1.0f / sqrtf(mean + eps);
@@ -136,7 +136,7 @@ void ggml_rmsnorm_f32_baseline(int n, float *y, const float *x, float eps) {
         "3:\n\t"
         : [x_ptr] "+r"(x_ptr_pass2), [y_ptr] "+r"(y_ptr_pass2), [n_in] "+r"(n_pass2)
         : [scale_ptr] "r"(&scale)
-        : "v0", "t0", "t1", "v1", "t2", "v2", "t3", "v3", "v4", "v5", "v6", "v7", "v8", "v9", "v10", "v11", "v12", "v13", "v14", "v15", "v16", "v17", "v18", "v19", "v20", "v21", "v22", "v23", "v24", "v25", "v26", "v27", "fa0", "memory"    );
+        : "t0", "v0", "t1", "v1", "t2", "v2", "v3", "t3", "v4", "v5", "v6", "v7", "v8", "v9", "v10", "v11", "v12", "v13", "v14", "v15", "v16", "v17", "v18", "v19", "v20", "v21", "v22", "v23", "v24", "v25", "v26", "v27", "fa0", "memory"    );
 }
 #endif
 
@@ -194,7 +194,7 @@ void ggml_rmsnorm_f32_asm_unroll2(int n, float *y, const float *x, float eps) {
         "th.vfmv.f.s %[sum_out], v24\n\t"
         : [sum_out] "=f"(sum_sq_f), [x_ptr] "+r"(x), [n_in] "+r"(n)
         : 
-        : "v0", "t0", "t1", "v1", "t2", "v2", "t3", "v3", "v4", "v5", "v6", "v7", "v8", "v9", "v10", "v11", "v12", "v13", "v14", "v15", "v16", "v17", "v18", "v19", "v20", "v21", "v22", "v23", "v24", "v25", "v26", "v27", "fa0", "memory"    );
+        : "t0", "v0", "t1", "v1", "t2", "v2", "v3", "t3", "v4", "v5", "v6", "v7", "v8", "v9", "v10", "v11", "v12", "v13", "v14", "v15", "v16", "v17", "v18", "v19", "v20", "v21", "v22", "v23", "v24", "v25", "v26", "v27", "fa0", "memory"    );
 
     const float mean = sum_sq_f / (float)n;
     const float scale = 1.0f / sqrtf(mean + eps);
@@ -241,7 +241,7 @@ void ggml_rmsnorm_f32_asm_unroll2(int n, float *y, const float *x, float eps) {
         "3:\n\t"
         : [x_ptr] "+r"(x_ptr_pass2), [y_ptr] "+r"(y_ptr_pass2), [n_in] "+r"(n_pass2)
         : [scale_ptr] "r"(&scale)
-        : "v0", "t0", "t1", "v1", "t2", "v2", "t3", "v3", "v4", "v5", "v6", "v7", "v8", "v9", "v10", "v11", "v12", "v13", "v14", "v15", "v16", "v17", "v18", "v19", "v20", "v21", "v22", "v23", "v24", "v25", "v26", "v27", "fa0", "memory"    );
+        : "t0", "v0", "t1", "v1", "t2", "v2", "v3", "t3", "v4", "v5", "v6", "v7", "v8", "v9", "v10", "v11", "v12", "v13", "v14", "v15", "v16", "v17", "v18", "v19", "v20", "v21", "v22", "v23", "v24", "v25", "v26", "v27", "fa0", "memory"    );
 }
 #endif
 
@@ -299,7 +299,7 @@ void ggml_rmsnorm_f32_asm_unroll2_interleaved(int n, float *y, const float *x, f
         "th.vfmv.f.s %[sum_out], v24\n\t"
         : [sum_out] "=f"(sum_sq_f), [x_ptr] "+r"(x), [n_in] "+r"(n)
         : 
-        : "v0", "t0", "t1", "v1", "t2", "v2", "t3", "v3", "v4", "v5", "v6", "v7", "v8", "v9", "v10", "v11", "v12", "v13", "v14", "v15", "v16", "v17", "v18", "v19", "v20", "v21", "v22", "v23", "v24", "v25", "v26", "v27", "fa0", "memory"    );
+        : "t0", "v0", "t1", "v1", "t2", "v2", "v3", "t3", "v4", "v5", "v6", "v7", "v8", "v9", "v10", "v11", "v12", "v13", "v14", "v15", "v16", "v17", "v18", "v19", "v20", "v21", "v22", "v23", "v24", "v25", "v26", "v27", "fa0", "memory"    );
 
     const float mean = sum_sq_f / (float)n;
     const float scale = 1.0f / sqrtf(mean + eps);
@@ -346,7 +346,7 @@ void ggml_rmsnorm_f32_asm_unroll2_interleaved(int n, float *y, const float *x, f
         "3:\n\t"
         : [x_ptr] "+r"(x_ptr_pass2), [y_ptr] "+r"(y_ptr_pass2), [n_in] "+r"(n_pass2)
         : [scale_ptr] "r"(&scale)
-        : "v0", "t0", "t1", "v1", "t2", "v2", "t3", "v3", "v4", "v5", "v6", "v7", "v8", "v9", "v10", "v11", "v12", "v13", "v14", "v15", "v16", "v17", "v18", "v19", "v20", "v21", "v22", "v23", "v24", "v25", "v26", "v27", "fa0", "memory"    );
+        : "t0", "v0", "t1", "v1", "t2", "v2", "v3", "t3", "v4", "v5", "v6", "v7", "v8", "v9", "v10", "v11", "v12", "v13", "v14", "v15", "v16", "v17", "v18", "v19", "v20", "v21", "v22", "v23", "v24", "v25", "v26", "v27", "fa0", "memory"    );
 }
 #endif
 
@@ -410,7 +410,7 @@ void ggml_rmsnorm_f32_asm_unroll4(int n, float *y, const float *x, float eps) {
         "th.vfmv.f.s %[sum_out], v24\n\t"
         : [sum_out] "=f"(sum_sq_f), [x_ptr] "+r"(x), [n_in] "+r"(n)
         : 
-        : "v0", "t0", "t1", "v1", "t2", "v2", "t3", "v3", "v4", "v5", "v6", "v7", "v8", "v9", "v10", "v11", "v12", "v13", "v14", "v15", "v16", "v17", "v18", "v19", "v20", "v21", "v22", "v23", "v24", "v25", "v26", "v27", "fa0", "memory"    );
+        : "t0", "v0", "t1", "v1", "t2", "v2", "v3", "t3", "v4", "v5", "v6", "v7", "v8", "v9", "v10", "v11", "v12", "v13", "v14", "v15", "v16", "v17", "v18", "v19", "v20", "v21", "v22", "v23", "v24", "v25", "v26", "v27", "fa0", "memory"    );
 
     const float mean = sum_sq_f / (float)n;
     const float scale = 1.0f / sqrtf(mean + eps);
@@ -467,7 +467,7 @@ void ggml_rmsnorm_f32_asm_unroll4(int n, float *y, const float *x, float eps) {
         "3:\n\t"
         : [x_ptr] "+r"(x_ptr_pass2), [y_ptr] "+r"(y_ptr_pass2), [n_in] "+r"(n_pass2)
         : [scale_ptr] "r"(&scale)
-        : "v0", "t0", "t1", "v1", "t2", "v2", "t3", "v3", "v4", "v5", "v6", "v7", "v8", "v9", "v10", "v11", "v12", "v13", "v14", "v15", "v16", "v17", "v18", "v19", "v20", "v21", "v22", "v23", "v24", "v25", "v26", "v27", "fa0", "memory"    );
+        : "t0", "v0", "t1", "v1", "t2", "v2", "v3", "t3", "v4", "v5", "v6", "v7", "v8", "v9", "v10", "v11", "v12", "v13", "v14", "v15", "v16", "v17", "v18", "v19", "v20", "v21", "v22", "v23", "v24", "v25", "v26", "v27", "fa0", "memory"    );
 }
 #endif
 
@@ -531,7 +531,7 @@ void ggml_rmsnorm_f32_asm_unroll4_interleaved(int n, float *y, const float *x, f
         "th.vfmv.f.s %[sum_out], v24\n\t"
         : [sum_out] "=f"(sum_sq_f), [x_ptr] "+r"(x), [n_in] "+r"(n)
         : 
-        : "v0", "t0", "t1", "v1", "t2", "v2", "t3", "v3", "v4", "v5", "v6", "v7", "v8", "v9", "v10", "v11", "v12", "v13", "v14", "v15", "v16", "v17", "v18", "v19", "v20", "v21", "v22", "v23", "v24", "v25", "v26", "v27", "fa0", "memory"    );
+        : "t0", "v0", "t1", "v1", "t2", "v2", "v3", "t3", "v4", "v5", "v6", "v7", "v8", "v9", "v10", "v11", "v12", "v13", "v14", "v15", "v16", "v17", "v18", "v19", "v20", "v21", "v22", "v23", "v24", "v25", "v26", "v27", "fa0", "memory"    );
 
     const float mean = sum_sq_f / (float)n;
     const float scale = 1.0f / sqrtf(mean + eps);
@@ -588,6 +588,6 @@ void ggml_rmsnorm_f32_asm_unroll4_interleaved(int n, float *y, const float *x, f
         "3:\n\t"
         : [x_ptr] "+r"(x_ptr_pass2), [y_ptr] "+r"(y_ptr_pass2), [n_in] "+r"(n_pass2)
         : [scale_ptr] "r"(&scale)
-        : "v0", "t0", "t1", "v1", "t2", "v2", "t3", "v3", "v4", "v5", "v6", "v7", "v8", "v9", "v10", "v11", "v12", "v13", "v14", "v15", "v16", "v17", "v18", "v19", "v20", "v21", "v22", "v23", "v24", "v25", "v26", "v27", "fa0", "memory"    );
+        : "t0", "v0", "t1", "v1", "t2", "v2", "v3", "t3", "v4", "v5", "v6", "v7", "v8", "v9", "v10", "v11", "v12", "v13", "v14", "v15", "v16", "v17", "v18", "v19", "v20", "v21", "v22", "v23", "v24", "v25", "v26", "v27", "fa0", "memory"    );
 }
 #endif
