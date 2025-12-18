@@ -22,8 +22,8 @@
 
 // === Test Configuration ===
 struct TestConfig {
-    int n = 4096;
-    int runs = 1000;
+    int n = 2048;
+    int runs = 10000;
 };
 
 // === Test Entry ===

@@ -72,7 +72,7 @@ static inline void process_single_block_asm_ggml_vec_dot_q8_0_q8_0_asm_unroll2_f
         : [x_ptr] "r"(x->qs), [y_ptr] "r"(y->qs)
         : "t0", "memory", "v8", "v9", "v10", "v11", "v12", "v13", "v14", "v15", "v24"
     );
-    *sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x->d) * GGML_CPU_FP16_TO_FP32(y->d);
+    *sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x->d) * GGML_CPU_FP16_TO_FP32(y->d));
 }
 
 // Generated function: ggml_vec_dot_q8_0_q8_0_asm_unroll2_fused
@@ -160,7 +160,7 @@ static inline void process_single_block_asm_ggml_vec_dot_q8_0_q8_0_asm_unroll2_f
         : [x_ptr] "r"(x->qs), [y_ptr] "r"(y->qs)
         : "t0", "memory", "v8", "v9", "v10", "v11", "v12", "v13", "v14", "v15", "v24"
     );
-    *sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x->d) * GGML_CPU_FP16_TO_FP32(y->d);
+    *sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x->d) * GGML_CPU_FP16_TO_FP32(y->d));
 }
 
 // Generated function: ggml_vec_dot_q8_0_q8_0_asm_unroll2_fused_f64
@@ -250,7 +250,7 @@ static inline void process_single_block_asm_ggml_vec_dot_q8_0_q8_0_baseline(cons
         : [x_ptr] "r"(x->qs), [y_ptr] "r"(y->qs)
         : "t0", "memory", "v8", "v9", "v10", "v11", "v12", "v13", "v14", "v15", "v24"
     );
-    *sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x->d) * GGML_CPU_FP16_TO_FP32(y->d);
+    *sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x->d) * GGML_CPU_FP16_TO_FP32(y->d));
 }
 
 // Generated function: ggml_vec_dot_q8_0_q8_0_baseline
@@ -332,7 +332,7 @@ static inline void process_single_block_asm_ggml_vec_dot_q8_0_q8_0_asm_f64(const
         : [x_ptr] "r"(x->qs), [y_ptr] "r"(y->qs)
         : "t0", "memory", "v8", "v9", "v10", "v11", "v12", "v13", "v14", "v15", "v24"
     );
-    *sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x->d) * GGML_CPU_FP16_TO_FP32(y->d);
+    *sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x->d) * GGML_CPU_FP16_TO_FP32(y->d));
 }
 
 // Generated function: ggml_vec_dot_q8_0_q8_0_asm_f64
@@ -416,7 +416,7 @@ static inline void process_single_block_asm_ggml_vec_dot_q8_0_q8_0_asm_unroll2(c
         : [x_ptr] "r"(x->qs), [y_ptr] "r"(y->qs)
         : "t0", "memory", "v8", "v9", "v10", "v11", "v12", "v13", "v14", "v15", "v24"
     );
-    *sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x->d) * GGML_CPU_FP16_TO_FP32(y->d);
+    *sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x->d) * GGML_CPU_FP16_TO_FP32(y->d));
 }
 
 // Generated function: ggml_vec_dot_q8_0_q8_0_asm_unroll2
@@ -511,7 +511,7 @@ static inline void process_single_block_asm_ggml_vec_dot_q8_0_q8_0_asm_unroll2_f
         : [x_ptr] "r"(x->qs), [y_ptr] "r"(y->qs)
         : "t0", "memory", "v8", "v9", "v10", "v11", "v12", "v13", "v14", "v15", "v24"
     );
-    *sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x->d) * GGML_CPU_FP16_TO_FP32(y->d);
+    *sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x->d) * GGML_CPU_FP16_TO_FP32(y->d));
 }
 
 // Generated function: ggml_vec_dot_q8_0_q8_0_asm_unroll2_f64
@@ -608,7 +608,7 @@ static inline void process_single_block_asm_ggml_vec_dot_q8_0_q8_0_asm_unroll2_p
         : [x_ptr] "r"(x->qs), [y_ptr] "r"(y->qs)
         : "t0", "memory", "v8", "v9", "v10", "v11", "v12", "v13", "v14", "v15", "v24"
     );
-    *sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x->d) * GGML_CPU_FP16_TO_FP32(y->d);
+    *sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x->d) * GGML_CPU_FP16_TO_FP32(y->d));
 }
 
 // Generated function: ggml_vec_dot_q8_0_q8_0_asm_unroll2_prefetch1
@@ -706,7 +706,7 @@ static inline void process_single_block_asm_ggml_vec_dot_q8_0_q8_0_asm_unroll2_p
         : [x_ptr] "r"(x->qs), [y_ptr] "r"(y->qs)
         : "t0", "memory", "v8", "v9", "v10", "v11", "v12", "v13", "v14", "v15", "v24"
     );
-    *sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x->d) * GGML_CPU_FP16_TO_FP32(y->d);
+    *sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x->d) * GGML_CPU_FP16_TO_FP32(y->d));
 }
 
 // Generated function: ggml_vec_dot_q8_0_q8_0_asm_unroll2_prefetch1_f64
@@ -826,7 +826,7 @@ static inline void process_single_block_asm_ggml_vec_dot_q8_0_q8_0_asm_unroll2_i
         : [x_ptr] "r"(x->qs), [y_ptr] "r"(y->qs)
         : "t0", "memory", "v8", "v9", "v10", "v11", "v12", "v13", "v14", "v15", "v24"
     );
-    *sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x->d) * GGML_CPU_FP16_TO_FP32(y->d);
+    *sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x->d) * GGML_CPU_FP16_TO_FP32(y->d));
 }
 
 // Generated function: ggml_vec_dot_q8_0_q8_0_asm_unroll2_interleaved
@@ -916,7 +916,7 @@ static inline void process_single_block_asm_ggml_vec_dot_q8_0_q8_0_asm_unroll2_i
         : [x_ptr] "r"(x->qs), [y_ptr] "r"(y->qs)
         : "t0", "memory", "v8", "v9", "v10", "v11", "v12", "v13", "v14", "v15", "v24"
     );
-    *sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x->d) * GGML_CPU_FP16_TO_FP32(y->d);
+    *sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x->d) * GGML_CPU_FP16_TO_FP32(y->d));
 }
 
 // Generated function: ggml_vec_dot_q8_0_q8_0_asm_unroll2_interleaved_f64
@@ -1008,7 +1008,7 @@ static inline void process_single_block_asm_ggml_vec_dot_q8_0_q8_0_asm_unroll2_i
         : [x_ptr] "r"(x->qs), [y_ptr] "r"(y->qs)
         : "t0", "memory", "v8", "v9", "v10", "v11", "v12", "v13", "v14", "v15", "v24"
     );
-    *sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x->d) * GGML_CPU_FP16_TO_FP32(y->d);
+    *sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x->d) * GGML_CPU_FP16_TO_FP32(y->d));
 }
 
 // Generated function: ggml_vec_dot_q8_0_q8_0_asm_unroll2_interleaved_prefetch1
@@ -1101,7 +1101,7 @@ static inline void process_single_block_asm_ggml_vec_dot_q8_0_q8_0_asm_unroll2_i
         : [x_ptr] "r"(x->qs), [y_ptr] "r"(y->qs)
         : "t0", "memory", "v8", "v9", "v10", "v11", "v12", "v13", "v14", "v15", "v24"
     );
-    *sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x->d) * GGML_CPU_FP16_TO_FP32(y->d);
+    *sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x->d) * GGML_CPU_FP16_TO_FP32(y->d));
 }
 
 // Generated function: ggml_vec_dot_q8_0_q8_0_asm_unroll2_interleaved_prefetch1_f64
@@ -1336,7 +1336,7 @@ static inline void process_single_block_asm_ggml_vec_dot_q8_0_q8_0_asm_batch4(co
         : [x_ptr] "r"(x->qs), [y_ptr] "r"(y->qs)
         : "t0", "memory", "v8", "v9", "v10", "v11", "v12", "v13", "v14", "v15", "v24"
     );
-    *sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x->d) * GGML_CPU_FP16_TO_FP32(y->d);
+    *sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x->d) * GGML_CPU_FP16_TO_FP32(y->d));
 }
 
 // Generated function: ggml_vec_dot_q8_0_q8_0_asm_batch4
@@ -1418,7 +1418,7 @@ static inline void process_single_block_asm_ggml_vec_dot_q8_0_q8_0_asm_f64_batch
         : [x_ptr] "r"(x->qs), [y_ptr] "r"(y->qs)
         : "t0", "memory", "v8", "v9", "v10", "v11", "v12", "v13", "v14", "v15", "v24"
     );
-    *sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x->d) * GGML_CPU_FP16_TO_FP32(y->d);
+    *sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x->d) * GGML_CPU_FP16_TO_FP32(y->d));
 }
 
 // Generated function: ggml_vec_dot_q8_0_q8_0_asm_f64_batch4
@@ -1522,7 +1522,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_split_macc(int n, float *s, const void *vx, cons
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -1583,7 +1583,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_f64_split_macc(int n, float *s, const void *vx, 
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -1644,7 +1644,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_unroll2_split_macc(int n, float *s, const void *
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -1705,7 +1705,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_unroll2_f64_split_macc(int n, float *s, const vo
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -1766,7 +1766,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_unroll2_prefetch1_split_macc(int n, float *s, co
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -1827,7 +1827,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_unroll2_prefetch1_f64_split_macc(int n, float *s
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -1888,7 +1888,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_unroll2_prefetch2_split_macc(int n, float *s, co
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -1949,7 +1949,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_unroll2_prefetch2_f64_split_macc(int n, float *s
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -2010,7 +2010,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_unroll2_interleaved_split_macc(int n, float *s, 
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -2071,7 +2071,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_unroll2_interleaved_f64_split_macc(int n, float 
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -2132,7 +2132,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_unroll2_interleaved_prefetch1_split_macc(int n, 
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -2193,7 +2193,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_unroll2_interleaved_prefetch1_f64_split_macc(int
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -2254,7 +2254,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_unroll2_interleaved_prefetch2_split_macc(int n, 
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -2315,7 +2315,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_unroll2_interleaved_prefetch2_f64_split_macc(int
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -2376,7 +2376,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_unroll4_split_macc(int n, float *s, const void *
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -2437,7 +2437,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_unroll4_f64_split_macc(int n, float *s, const vo
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -2498,7 +2498,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_unroll4_prefetch1_split_macc(int n, float *s, co
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -2559,7 +2559,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_unroll4_prefetch1_f64_split_macc(int n, float *s
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -2620,7 +2620,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_unroll4_prefetch2_split_macc(int n, float *s, co
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -2681,7 +2681,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_unroll4_prefetch2_f64_split_macc(int n, float *s
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -2742,7 +2742,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_unroll4_interleaved_split_macc(int n, float *s, 
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -2803,7 +2803,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_unroll4_interleaved_f64_split_macc(int n, float 
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -2864,7 +2864,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_unroll4_interleaved_prefetch1_split_macc(int n, 
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -2925,7 +2925,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_unroll4_interleaved_prefetch1_f64_split_macc(int
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -2986,7 +2986,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_unroll4_interleaved_prefetch2_split_macc(int n, 
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -3047,7 +3047,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_unroll4_interleaved_prefetch2_f64_split_macc(int
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -3142,10 +3142,10 @@ void ggml_vec_dot_q8_0_q8_0_asm_split_macc_batch4(int n, float *s, const void *v
             
             : [s0] "=r"(sumi[0]), [s1] "=r"(sumi[1]), [s2] "=r"(sumi[2]), [s3] "=r"(sumi[3])            : [x0_lo] "r"(x[ib+0].qs), [y0_lo] "r"(y[ib+0].qs), [x0_hi] "r"(x[ib+0].qs + 16), [y0_hi] "r"(y[ib+0].qs + 16), [x1_lo] "r"(x[ib+1].qs), [y1_lo] "r"(y[ib+1].qs), [x1_hi] "r"(x[ib+1].qs + 16), [y1_hi] "r"(y[ib+1].qs + 16), [x2_lo] "r"(x[ib+2].qs), [y2_lo] "r"(y[ib+2].qs), [x2_hi] "r"(x[ib+2].qs + 16), [y2_hi] "r"(y[ib+2].qs + 16), [x3_lo] "r"(x[ib+3].qs), [y3_lo] "r"(y[ib+3].qs), [x3_hi] "r"(x[ib+3].qs + 16), [y3_hi] "r"(y[ib+3].qs + 16)            : "t0", "memory", "v0", "v1", "v2", "v3", "v8", "v9", "v16", "v24", "v25", "v26", "v27"        );
         
-        sumf += (float)sumi[0] * GGML_CPU_FP16_TO_FP32(x[ib+0].d) * GGML_CPU_FP16_TO_FP32(y[ib+0].d);
-        sumf += (float)sumi[1] * GGML_CPU_FP16_TO_FP32(x[ib+1].d) * GGML_CPU_FP16_TO_FP32(y[ib+1].d);
-        sumf += (float)sumi[2] * GGML_CPU_FP16_TO_FP32(x[ib+2].d) * GGML_CPU_FP16_TO_FP32(y[ib+2].d);
-        sumf += (float)sumi[3] * GGML_CPU_FP16_TO_FP32(x[ib+3].d) * GGML_CPU_FP16_TO_FP32(y[ib+3].d);
+        sumf += (float)sumi[0] * (GGML_CPU_FP16_TO_FP32(x[ib+0].d) * GGML_CPU_FP16_TO_FP32(y[ib+0].d));
+        sumf += (float)sumi[1] * (GGML_CPU_FP16_TO_FP32(x[ib+1].d) * GGML_CPU_FP16_TO_FP32(y[ib+1].d));
+        sumf += (float)sumi[2] * (GGML_CPU_FP16_TO_FP32(x[ib+2].d) * GGML_CPU_FP16_TO_FP32(y[ib+2].d));
+        sumf += (float)sumi[3] * (GGML_CPU_FP16_TO_FP32(x[ib+3].d) * GGML_CPU_FP16_TO_FP32(y[ib+3].d));
     }
     
     // Tail loop
@@ -3171,7 +3171,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_split_macc_batch4(int n, float *s, const void *v
               [x_hi] "r"(x[ib].qs + 16), [y_hi] "r"(y[ib].qs + 16)
             : "t0", "memory", "v0", "v1", "v2", "v3", "v8", "v9", "v16"
         );
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -3266,10 +3266,10 @@ void ggml_vec_dot_q8_0_q8_0_asm_f64_split_macc_batch4(int n, float *s, const voi
             
             : [s0] "=r"(sumi[0]), [s1] "=r"(sumi[1]), [s2] "=r"(sumi[2]), [s3] "=r"(sumi[3])            : [x0_lo] "r"(x[ib+0].qs), [y0_lo] "r"(y[ib+0].qs), [x0_hi] "r"(x[ib+0].qs + 16), [y0_hi] "r"(y[ib+0].qs + 16), [x1_lo] "r"(x[ib+1].qs), [y1_lo] "r"(y[ib+1].qs), [x1_hi] "r"(x[ib+1].qs + 16), [y1_hi] "r"(y[ib+1].qs + 16), [x2_lo] "r"(x[ib+2].qs), [y2_lo] "r"(y[ib+2].qs), [x2_hi] "r"(x[ib+2].qs + 16), [y2_hi] "r"(y[ib+2].qs + 16), [x3_lo] "r"(x[ib+3].qs), [y3_lo] "r"(y[ib+3].qs), [x3_hi] "r"(x[ib+3].qs + 16), [y3_hi] "r"(y[ib+3].qs + 16)            : "t0", "memory", "v0", "v1", "v2", "v3", "v8", "v9", "v16", "v24", "v25", "v26", "v27"        );
         
-        sumf += (float)sumi[0] * GGML_CPU_FP16_TO_FP32(x[ib+0].d) * GGML_CPU_FP16_TO_FP32(y[ib+0].d);
-        sumf += (float)sumi[1] * GGML_CPU_FP16_TO_FP32(x[ib+1].d) * GGML_CPU_FP16_TO_FP32(y[ib+1].d);
-        sumf += (float)sumi[2] * GGML_CPU_FP16_TO_FP32(x[ib+2].d) * GGML_CPU_FP16_TO_FP32(y[ib+2].d);
-        sumf += (float)sumi[3] * GGML_CPU_FP16_TO_FP32(x[ib+3].d) * GGML_CPU_FP16_TO_FP32(y[ib+3].d);
+        sumf += (float)sumi[0] * (GGML_CPU_FP16_TO_FP32(x[ib+0].d) * GGML_CPU_FP16_TO_FP32(y[ib+0].d));
+        sumf += (float)sumi[1] * (GGML_CPU_FP16_TO_FP32(x[ib+1].d) * GGML_CPU_FP16_TO_FP32(y[ib+1].d));
+        sumf += (float)sumi[2] * (GGML_CPU_FP16_TO_FP32(x[ib+2].d) * GGML_CPU_FP16_TO_FP32(y[ib+2].d));
+        sumf += (float)sumi[3] * (GGML_CPU_FP16_TO_FP32(x[ib+3].d) * GGML_CPU_FP16_TO_FP32(y[ib+3].d));
     }
     
     // Tail loop
@@ -3295,7 +3295,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_f64_split_macc_batch4(int n, float *s, const voi
               [x_hi] "r"(x[ib].qs + 16), [y_hi] "r"(y[ib].qs + 16)
             : "t0", "memory", "v0", "v1", "v2", "v3", "v8", "v9", "v16"
         );
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -3360,7 +3360,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_split(int n, float *s, const void *vx, const voi
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v6", "v7", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -3425,7 +3425,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_f64_split(int n, float *s, const void *vx, const
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v6", "v7", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -3490,7 +3490,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_unroll2_split(int n, float *s, const void *vx, c
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v6", "v7", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -3555,7 +3555,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_unroll2_f64_split(int n, float *s, const void *v
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v6", "v7", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -3620,7 +3620,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_unroll2_prefetch1_split(int n, float *s, const v
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v6", "v7", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -3685,7 +3685,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_unroll2_prefetch1_f64_split(int n, float *s, con
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v6", "v7", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -3750,7 +3750,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_unroll2_prefetch2_split(int n, float *s, const v
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v6", "v7", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -3815,7 +3815,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_unroll2_prefetch2_f64_split(int n, float *s, con
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v6", "v7", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -3880,7 +3880,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_unroll2_interleaved_split(int n, float *s, const
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v6", "v7", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -3945,7 +3945,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_unroll2_interleaved_f64_split(int n, float *s, c
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v6", "v7", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -4010,7 +4010,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_unroll2_interleaved_prefetch1_split(int n, float
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v6", "v7", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -4075,7 +4075,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_unroll2_interleaved_prefetch1_f64_split(int n, f
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v6", "v7", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -4140,7 +4140,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_unroll2_interleaved_prefetch2_split(int n, float
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v6", "v7", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -4205,7 +4205,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_unroll2_interleaved_prefetch2_f64_split(int n, f
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v6", "v7", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -4270,7 +4270,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_unroll4_split(int n, float *s, const void *vx, c
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v6", "v7", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -4335,7 +4335,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_unroll4_f64_split(int n, float *s, const void *v
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v6", "v7", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -4400,7 +4400,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_unroll4_prefetch1_split(int n, float *s, const v
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v6", "v7", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -4465,7 +4465,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_unroll4_prefetch1_f64_split(int n, float *s, con
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v6", "v7", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -4530,7 +4530,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_unroll4_prefetch2_split(int n, float *s, const v
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v6", "v7", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -4595,7 +4595,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_unroll4_prefetch2_f64_split(int n, float *s, con
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v6", "v7", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -4660,7 +4660,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_unroll4_interleaved_split(int n, float *s, const
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v6", "v7", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -4725,7 +4725,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_unroll4_interleaved_f64_split(int n, float *s, c
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v6", "v7", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -4790,7 +4790,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_unroll4_interleaved_prefetch1_split(int n, float
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v6", "v7", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -4855,7 +4855,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_unroll4_interleaved_prefetch1_f64_split(int n, f
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v6", "v7", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -4920,7 +4920,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_unroll4_interleaved_prefetch2_split(int n, float
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v6", "v7", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -4985,7 +4985,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_unroll4_interleaved_prefetch2_f64_split(int n, f
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v6", "v7", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -5050,7 +5050,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_split_batch4(int n, float *s, const void *vx, co
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v6", "v7", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;
@@ -5115,7 +5115,7 @@ void ggml_vec_dot_q8_0_q8_0_asm_f64_split_batch4(int n, float *s, const void *vx
             : "t0", "memory", "v0", "v1", "v2", "v3", "v4", "v5", "v6", "v7", "v8"
         );
         
-        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * (GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d));
     }
     
     *s = sumf;

@@ -56,7 +56,7 @@ float sumf[4][8] = {{0.0f}};            for (int l = 0; l < nb; l++) {
                             vint32m1_t vsum32 = __riscv_vwredsum_vs_i16m2_i32m1(vsum16, v_zero, vl);
                             sumi += __riscv_vmv_x_s_i32m1_i32(vsum32);
                         }
-                        sumf[m][j] += (float)(sumi >> 4) * GGML_CPU_FP16_TO_FP32(b_ptr->d[j]) * GGML_CPU_FP16_TO_FP32(a_ptr->d[m]);
+                        sumf[m][j] += (float)(sumi >> 4) * (GGML_CPU_FP16_TO_FP32(b_ptr->d[j]) * GGML_CPU_FP16_TO_FP32(a_ptr->d[m]));
                     }
                 }
             }
@@ -111,7 +111,7 @@ static inline void ggml_gemm_q4_0_8x8_q8_0_rvv_tail_processing_asm_ggml_gemm_q4_
         );
         sumi += psum;
     }
-    *sumf_mj += (float)(sumi >> 4) * GGML_CPU_FP16_TO_FP32(b_ptr->d[j]) * GGML_CPU_FP16_TO_FP32(a_ptr->d[m]);
+    *sumf_mj += (float)(sumi >> 4) * (GGML_CPU_FP16_TO_FP32(b_ptr->d[j]) * GGML_CPU_FP16_TO_FP32(a_ptr->d[m]));
 }
 
 // Generated function: ggml_gemm_q4_0_8x8_q8_0_baseline
@@ -168,7 +168,7 @@ float sumf[4][8] = {{0.0f}};
                                   [a00_ptr] "r"(a_qs_ptr0_0), 
                                   [a01_ptr] "r"(a_qs_ptr0_1)                                : "t0", "memory", "v8", "v9", "v10", "v11", "v16", "v17", "v24"                            );
 sumi_block[0] += psum[0];                        }
-                        sumf[m][j] += (float)(sumi_block[0] >> 4) * GGML_CPU_FP16_TO_FP32(b_ptr[0]->d[j]) * GGML_CPU_FP16_TO_FP32(a_ptr[0]->d[m]);
+                        sumf[m][j] += (float)(sumi_block[0] >> 4) * (GGML_CPU_FP16_TO_FP32(b_ptr[0]->d[j]) * GGML_CPU_FP16_TO_FP32(a_ptr[0]->d[m]));
                     }
                     // --- Tail loop over K blocks ---
                     for (; l < nb; l++) {
@@ -227,7 +227,7 @@ static inline void ggml_gemm_q4_0_8x8_q8_0_rvv_tail_processing_asm_ggml_gemm_q4_
         );
         sumi += psum;
     }
-    *sumf_mj += (float)(sumi >> 4) * GGML_CPU_FP16_TO_FP32(b_ptr->d[j]) * GGML_CPU_FP16_TO_FP32(a_ptr->d[m]);
+    *sumf_mj += (float)(sumi >> 4) * (GGML_CPU_FP16_TO_FP32(b_ptr->d[j]) * GGML_CPU_FP16_TO_FP32(a_ptr->d[m]));
 }
 
 // Generated function: ggml_gemm_q4_0_8x8_q8_0_asm_unroll2
@@ -303,8 +303,8 @@ float sumf[4][8] = {{0.0f}};
                                   [a10_ptr] "r"(a_qs_ptr1_0), 
                                   [a11_ptr] "r"(a_qs_ptr1_1)                                : "t0", "memory", "v8", "v9", "v10", "v11", "v16", "v17", "v20", "v21", "v24", "v28"                            );
 sumi_block[0] += psum[0];sumi_block[1] += psum[1];                        }
-                        sumf[m][j] += (float)(sumi_block[0] >> 4) * GGML_CPU_FP16_TO_FP32(b_ptr[0]->d[j]) * GGML_CPU_FP16_TO_FP32(a_ptr[0]->d[m]);
-                        sumf[m][j] += (float)(sumi_block[1] >> 4) * GGML_CPU_FP16_TO_FP32(b_ptr[1]->d[j]) * GGML_CPU_FP16_TO_FP32(a_ptr[1]->d[m]);
+                        sumf[m][j] += (float)(sumi_block[0] >> 4) * (GGML_CPU_FP16_TO_FP32(b_ptr[0]->d[j]) * GGML_CPU_FP16_TO_FP32(a_ptr[0]->d[m]));
+                        sumf[m][j] += (float)(sumi_block[1] >> 4) * (GGML_CPU_FP16_TO_FP32(b_ptr[1]->d[j]) * GGML_CPU_FP16_TO_FP32(a_ptr[1]->d[m]));
                     }
                     // --- Tail loop over K blocks ---
                     for (; l < nb; l++) {
@@ -363,7 +363,7 @@ static inline void ggml_gemm_q4_0_8x8_q8_0_rvv_tail_processing_asm_ggml_gemm_q4_
         );
         sumi += psum;
     }
-    *sumf_mj += (float)(sumi >> 4) * GGML_CPU_FP16_TO_FP32(b_ptr->d[j]) * GGML_CPU_FP16_TO_FP32(a_ptr->d[m]);
+    *sumf_mj += (float)(sumi >> 4) * (GGML_CPU_FP16_TO_FP32(b_ptr->d[j]) * GGML_CPU_FP16_TO_FP32(a_ptr->d[m]));
 }
 
 // Generated function: ggml_gemm_q4_0_8x8_q8_0_asm_unroll2_interleaved
@@ -439,8 +439,8 @@ float sumf[4][8] = {{0.0f}};
                                   [a10_ptr] "r"(a_qs_ptr1_0), 
                                   [a11_ptr] "r"(a_qs_ptr1_1)                                : "t0", "memory", "v8", "v9", "v10", "v11", "v16", "v17", "v20", "v21", "v24", "v28"                            );
 sumi_block[0] += psum[0];sumi_block[1] += psum[1];                        }
-                        sumf[m][j] += (float)(sumi_block[0] >> 4) * GGML_CPU_FP16_TO_FP32(b_ptr[0]->d[j]) * GGML_CPU_FP16_TO_FP32(a_ptr[0]->d[m]);
-                        sumf[m][j] += (float)(sumi_block[1] >> 4) * GGML_CPU_FP16_TO_FP32(b_ptr[1]->d[j]) * GGML_CPU_FP16_TO_FP32(a_ptr[1]->d[m]);
+                        sumf[m][j] += (float)(sumi_block[0] >> 4) * (GGML_CPU_FP16_TO_FP32(b_ptr[0]->d[j]) * GGML_CPU_FP16_TO_FP32(a_ptr[0]->d[m]));
+                        sumf[m][j] += (float)(sumi_block[1] >> 4) * (GGML_CPU_FP16_TO_FP32(b_ptr[1]->d[j]) * GGML_CPU_FP16_TO_FP32(a_ptr[1]->d[m]));
                     }
                     // --- Tail loop over K blocks ---
                     for (; l < nb; l++) {

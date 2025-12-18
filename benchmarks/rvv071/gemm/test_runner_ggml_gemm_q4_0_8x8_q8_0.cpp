@@ -150,7 +150,7 @@ void ggml_gemm_q4_0_8x8_q8_0_scalar(int M, int N, int K, const void * A, const v
 
                              sumi += (v0 * a0 + v1 * a1);
                         }
-                        sumf[m][j] += (float)(sumi >> 4) * GGML_CPU_FP16_TO_FP32(b_ptr->d[j]) * GGML_CPU_FP16_TO_FP32(a_ptr->d[m]);
+                        sumf[m][j] += (float)(sumi >> 4) * (GGML_CPU_FP16_TO_FP32(b_ptr->d[j]) * GGML_CPU_FP16_TO_FP32(a_ptr->d[m]));
                     }
                 }
             }
