@@ -116,31 +116,14 @@ int main(int argc, char** argv) {
     all_tests.push_back({"Scalar (baseline)", quantize_row_q8_0_scalar});
     
 #if defined(__riscv_v)
-    
-    
     all_tests.push_back({"RVV Intrinsics", quantize_row_q8_0_rvv_intrinsics});
-    
-    
-    
-    
-    
-    
 #endif
 
 
 #if defined(__RVV_ASM_STD)
 
-    
-    
-    
-    
     all_tests.push_back({"quantize_row_q8_0_baseline", quantize_row_q8_0_baseline});
-    
-    
-    
     all_tests.push_back({"quantize_row_q8_0_asm_unroll2", quantize_row_q8_0_asm_unroll2});
-    
-    
 #endif
 
     // === Step 1: Correctness Check ===
@@ -190,8 +173,8 @@ int main(int argc, char** argv) {
         double speedup = baseline_time / avg_time;
         
         std::cout << std::left << std::setw(50) << short_name(test.name)
-                  << std::fixed << std::setprecision(2) << std::setw(18) << avg_time
-                  << std::setprecision(2) << speedup << "x" << std::endl;
+                  << std::fixed << std::setprecision(4) << std::setw(18) << avg_time
+                  << std::setprecision(4) << speedup << "x" << std::endl;
     }
     
     return 0;

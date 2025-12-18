@@ -9,7 +9,7 @@ KERNEL_NAME="quantize_row_q8_0"
 KERNEL_KEY="quantize"
 HW_NAME="th1520"
 MARCH="rv64gc_xtheadvector1p0_zfhmin"
-MARCH_ZFH="rv64gc_xtheadvector1p0_zfhmin"
+MARCH_ZFH="rv64gc_xtheadvector1p0_zfh"
 DEFINES="-D__riscv_v -D__riscv_xtheadvector -D__RVV_ASM_XTHEAD"
 INCLUDES="-I../common"
 

@@ -118,439 +118,82 @@ int main(int argc, char** argv) {
     all_tests.push_back({"Scalar (baseline)", ggml_vec_dot_q8_0_q8_0_scalar});
     
 #if defined(__riscv_v)
-    
-    
     all_tests.push_back({"RVV Intrinsics", ggml_vec_dot_q8_0_q8_0_rvv_intrinsics});
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 #endif
 
 
 #if defined(__RVV_ASM_STD)
 
-    
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll2_fused", ggml_vec_dot_q8_0_q8_0_asm_unroll2_fused});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll2_fused_f64", ggml_vec_dot_q8_0_q8_0_asm_unroll2_fused_f64});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_baseline", ggml_vec_dot_q8_0_q8_0_baseline});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_f64", ggml_vec_dot_q8_0_q8_0_asm_f64});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll2", ggml_vec_dot_q8_0_q8_0_asm_unroll2});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll2_f64", ggml_vec_dot_q8_0_q8_0_asm_unroll2_f64});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll2_prefetch1", ggml_vec_dot_q8_0_q8_0_asm_unroll2_prefetch1});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll2_prefetch1_f64", ggml_vec_dot_q8_0_q8_0_asm_unroll2_prefetch1_f64});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll2_interleaved", ggml_vec_dot_q8_0_q8_0_asm_unroll2_interleaved});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll2_interleaved_f64", ggml_vec_dot_q8_0_q8_0_asm_unroll2_interleaved_f64});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll2_interleaved_prefetch1", ggml_vec_dot_q8_0_q8_0_asm_unroll2_interleaved_prefetch1});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll2_interleaved_prefetch1_f64", ggml_vec_dot_q8_0_q8_0_asm_unroll2_interleaved_prefetch1_f64});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_batch4", ggml_vec_dot_q8_0_q8_0_asm_batch4});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_f64_batch4", ggml_vec_dot_q8_0_q8_0_asm_f64_batch4});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_split_macc", ggml_vec_dot_q8_0_q8_0_asm_split_macc});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_f64_split_macc", ggml_vec_dot_q8_0_q8_0_asm_f64_split_macc});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll2_split_macc", ggml_vec_dot_q8_0_q8_0_asm_unroll2_split_macc});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll2_f64_split_macc", ggml_vec_dot_q8_0_q8_0_asm_unroll2_f64_split_macc});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll2_prefetch1_split_macc", ggml_vec_dot_q8_0_q8_0_asm_unroll2_prefetch1_split_macc});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll2_prefetch1_f64_split_macc", ggml_vec_dot_q8_0_q8_0_asm_unroll2_prefetch1_f64_split_macc});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll2_prefetch2_split_macc", ggml_vec_dot_q8_0_q8_0_asm_unroll2_prefetch2_split_macc});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll2_prefetch2_f64_split_macc", ggml_vec_dot_q8_0_q8_0_asm_unroll2_prefetch2_f64_split_macc});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll2_interleaved_split_macc", ggml_vec_dot_q8_0_q8_0_asm_unroll2_interleaved_split_macc});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll2_interleaved_f64_split_macc", ggml_vec_dot_q8_0_q8_0_asm_unroll2_interleaved_f64_split_macc});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll2_interleaved_prefetch1_split_macc", ggml_vec_dot_q8_0_q8_0_asm_unroll2_interleaved_prefetch1_split_macc});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll2_interleaved_prefetch1_f64_split_macc", ggml_vec_dot_q8_0_q8_0_asm_unroll2_interleaved_prefetch1_f64_split_macc});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll2_interleaved_prefetch2_split_macc", ggml_vec_dot_q8_0_q8_0_asm_unroll2_interleaved_prefetch2_split_macc});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll2_interleaved_prefetch2_f64_split_macc", ggml_vec_dot_q8_0_q8_0_asm_unroll2_interleaved_prefetch2_f64_split_macc});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll4_split_macc", ggml_vec_dot_q8_0_q8_0_asm_unroll4_split_macc});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll4_f64_split_macc", ggml_vec_dot_q8_0_q8_0_asm_unroll4_f64_split_macc});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll4_prefetch1_split_macc", ggml_vec_dot_q8_0_q8_0_asm_unroll4_prefetch1_split_macc});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll4_prefetch1_f64_split_macc", ggml_vec_dot_q8_0_q8_0_asm_unroll4_prefetch1_f64_split_macc});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll4_prefetch2_split_macc", ggml_vec_dot_q8_0_q8_0_asm_unroll4_prefetch2_split_macc});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll4_prefetch2_f64_split_macc", ggml_vec_dot_q8_0_q8_0_asm_unroll4_prefetch2_f64_split_macc});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll4_interleaved_split_macc", ggml_vec_dot_q8_0_q8_0_asm_unroll4_interleaved_split_macc});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll4_interleaved_f64_split_macc", ggml_vec_dot_q8_0_q8_0_asm_unroll4_interleaved_f64_split_macc});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll4_interleaved_prefetch1_split_macc", ggml_vec_dot_q8_0_q8_0_asm_unroll4_interleaved_prefetch1_split_macc});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll4_interleaved_prefetch1_f64_split_macc", ggml_vec_dot_q8_0_q8_0_asm_unroll4_interleaved_prefetch1_f64_split_macc});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll4_interleaved_prefetch2_split_macc", ggml_vec_dot_q8_0_q8_0_asm_unroll4_interleaved_prefetch2_split_macc});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll4_interleaved_prefetch2_f64_split_macc", ggml_vec_dot_q8_0_q8_0_asm_unroll4_interleaved_prefetch2_f64_split_macc});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_split_macc_batch4", ggml_vec_dot_q8_0_q8_0_asm_split_macc_batch4});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_f64_split_macc_batch4", ggml_vec_dot_q8_0_q8_0_asm_f64_split_macc_batch4});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_split", ggml_vec_dot_q8_0_q8_0_asm_split});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_f64_split", ggml_vec_dot_q8_0_q8_0_asm_f64_split});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll2_split", ggml_vec_dot_q8_0_q8_0_asm_unroll2_split});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll2_f64_split", ggml_vec_dot_q8_0_q8_0_asm_unroll2_f64_split});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll2_prefetch1_split", ggml_vec_dot_q8_0_q8_0_asm_unroll2_prefetch1_split});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll2_prefetch1_f64_split", ggml_vec_dot_q8_0_q8_0_asm_unroll2_prefetch1_f64_split});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll2_prefetch2_split", ggml_vec_dot_q8_0_q8_0_asm_unroll2_prefetch2_split});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll2_prefetch2_f64_split", ggml_vec_dot_q8_0_q8_0_asm_unroll2_prefetch2_f64_split});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll2_interleaved_split", ggml_vec_dot_q8_0_q8_0_asm_unroll2_interleaved_split});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll2_interleaved_f64_split", ggml_vec_dot_q8_0_q8_0_asm_unroll2_interleaved_f64_split});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll2_interleaved_prefetch1_split", ggml_vec_dot_q8_0_q8_0_asm_unroll2_interleaved_prefetch1_split});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll2_interleaved_prefetch1_f64_split", ggml_vec_dot_q8_0_q8_0_asm_unroll2_interleaved_prefetch1_f64_split});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll2_interleaved_prefetch2_split", ggml_vec_dot_q8_0_q8_0_asm_unroll2_interleaved_prefetch2_split});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll2_interleaved_prefetch2_f64_split", ggml_vec_dot_q8_0_q8_0_asm_unroll2_interleaved_prefetch2_f64_split});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll4_split", ggml_vec_dot_q8_0_q8_0_asm_unroll4_split});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll4_f64_split", ggml_vec_dot_q8_0_q8_0_asm_unroll4_f64_split});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll4_prefetch1_split", ggml_vec_dot_q8_0_q8_0_asm_unroll4_prefetch1_split});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll4_prefetch1_f64_split", ggml_vec_dot_q8_0_q8_0_asm_unroll4_prefetch1_f64_split});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll4_prefetch2_split", ggml_vec_dot_q8_0_q8_0_asm_unroll4_prefetch2_split});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll4_prefetch2_f64_split", ggml_vec_dot_q8_0_q8_0_asm_unroll4_prefetch2_f64_split});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll4_interleaved_split", ggml_vec_dot_q8_0_q8_0_asm_unroll4_interleaved_split});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll4_interleaved_f64_split", ggml_vec_dot_q8_0_q8_0_asm_unroll4_interleaved_f64_split});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll4_interleaved_prefetch1_split", ggml_vec_dot_q8_0_q8_0_asm_unroll4_interleaved_prefetch1_split});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll4_interleaved_prefetch1_f64_split", ggml_vec_dot_q8_0_q8_0_asm_unroll4_interleaved_prefetch1_f64_split});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll4_interleaved_prefetch2_split", ggml_vec_dot_q8_0_q8_0_asm_unroll4_interleaved_prefetch2_split});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_unroll4_interleaved_prefetch2_f64_split", ggml_vec_dot_q8_0_q8_0_asm_unroll4_interleaved_prefetch2_f64_split});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_split_batch4", ggml_vec_dot_q8_0_q8_0_asm_split_batch4});
-    
-    
-    
     all_tests.push_back({"ggml_vec_dot_q8_0_q8_0_asm_f64_split_batch4", ggml_vec_dot_q8_0_q8_0_asm_f64_split_batch4});
-    
-    
 #endif
 
     // === Step 1: Correctness Check ===
@@ -605,8 +248,8 @@ int main(int argc, char** argv) {
         double speedup = baseline_time / avg_time;
         
         std::cout << std::left << std::setw(50) << short_name(test.name)
-                  << std::fixed << std::setprecision(2) << std::setw(18) << avg_time
-                  << std::setprecision(2) << speedup << "x" << std::endl;
+                  << std::fixed << std::setprecision(4) << std::setw(18) << avg_time
+                  << std::setprecision(4) << speedup << "x" << std::endl;
     }
     
     return 0;

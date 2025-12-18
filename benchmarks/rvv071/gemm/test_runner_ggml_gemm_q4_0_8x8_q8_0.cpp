@@ -238,40 +238,17 @@ int main(int argc, char** argv) {
     all_tests.push_back({"Scalar C++", ggml_gemm_q4_0_8x8_q8_0_scalar});
 
 #if defined(__riscv_v)
-    
-    
     if (config.tests_to_run.empty() || config.tests_to_run["all"] || config.tests_to_run["intrinsics"]) {
         all_tests.push_back({"RVV Intrinsics", ggml_gemm_q4_0_8x8_q8_0_rvv_intrinsics});
     }
-    
-    
-    
-    
-    
-    
-    
-    
 #endif
 
 
 #if defined(__RVV_ASM_XTHEAD)
-
     if (config.tests_to_run.empty() || config.tests_to_run["all"] || config.tests_to_run["asm"]) {
-    
-    
-    
-    
         all_tests.push_back({"ggml_gemm_q4_0_8x8_q8_0_baseline", ggml_gemm_q4_0_8x8_q8_0_baseline});
-    
-    
-    
         all_tests.push_back({"ggml_gemm_q4_0_8x8_q8_0_asm_unroll2", ggml_gemm_q4_0_8x8_q8_0_asm_unroll2});
-    
-    
-    
         all_tests.push_back({"ggml_gemm_q4_0_8x8_q8_0_asm_unroll2_interleaved", ggml_gemm_q4_0_8x8_q8_0_asm_unroll2_interleaved});
-    
-    
     }
 #endif
 
@@ -318,7 +295,7 @@ int main(int argc, char** argv) {
 
         std::cout << std::left << std::setw(40) << short_name(test.name)
                   << std::setw(18) << std::fixed << std::setprecision(4) << avg_time
-                  << std::setw(15) << std::fixed << std::setprecision(2) << speedup << "x"
+                  << std::setw(15) << std::fixed << std::setprecision(4) << speedup << "x"
                   << std::scientific << std::setprecision(4) << diff << std::endl;
     }
 
