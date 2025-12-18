@@ -139,7 +139,9 @@ int main(int argc, char** argv) {
     std::vector<TestEntry> all_tests;
     all_tests.push_back({"Scalar (baseline)", ggml_vec_dot_q4_0_q8_0_scalar});
     
+
 #if defined(__riscv_v)
+
     all_tests.push_back({"RVV Intrinsics", ggml_vec_dot_q4_0_q8_0_rvv_intrinsics});
 #endif
 

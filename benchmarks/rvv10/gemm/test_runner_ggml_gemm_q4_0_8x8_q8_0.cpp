@@ -237,7 +237,9 @@ int main(int argc, char** argv) {
     // Scalar baseline
     all_tests.push_back({"Scalar C++", ggml_gemm_q4_0_8x8_q8_0_scalar});
 
+
 #if defined(__riscv_v)
+
     if (config.tests_to_run.empty() || config.tests_to_run["all"] || config.tests_to_run["intrinsics"]) {
         all_tests.push_back({"RVV Intrinsics", ggml_gemm_q4_0_8x8_q8_0_rvv_intrinsics});
     }

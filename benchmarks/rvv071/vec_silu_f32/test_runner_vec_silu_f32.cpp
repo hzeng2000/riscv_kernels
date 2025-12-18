@@ -98,7 +98,8 @@ int main(int argc, char** argv) {
     std::vector<TestEntry> all_tests;
     all_tests.push_back({"Scalar (baseline)", ggml_vec_silu_f32_scalar});
     
-#if defined(__riscv_v)
+
+#if defined(__riscv_v) || defined(__riscv_xtheadvector)
     all_tests.push_back({"RVV Intrinsics", ggml_vec_silu_f32_rvv_intrinsics});
 #endif
 
