@@ -2,7 +2,7 @@
 
 # ================= 配置区域 =================
 # 根目录，根据你的描述是 /root/wmw
-BASE_DIR="/home/openkylin/hzeng/riscv_kernels/e2e/rvv071/vec_dot_q8_series"
+BASE_DIR="/home/openkylin/hzeng/riscv_kernels/e2e/rvv071/out/vec_dot_q8_series"
 
 # 模型所在的根目录
 MODEL_ROOT_DIR="/home/openkylin/model/unsloth"
