@@ -75,7 +75,7 @@ void ggml_vec_dot_q8_0_q8_0_scalar(int n, float *s, const void *vx, const void *
         for (int j = 0; j < QK8_0; ++j) {
             sumi += x[ib].qs[j] * y[ib].qs[j];
         }
-        sumf += (float)sumi * GGML_FP16_TO_FP32(x[ib].d) * GGML_FP16_TO_FP32(y[ib].d);
+        sumf += (float)sumi * GGML_CPU_FP16_TO_FP32(x[ib].d) * GGML_CPU_FP16_TO_FP32(y[ib].d);
     }
     *s = sumf;
 }

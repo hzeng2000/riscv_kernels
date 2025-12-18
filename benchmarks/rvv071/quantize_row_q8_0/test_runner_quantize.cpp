@@ -84,8 +84,8 @@ double check_block_q8_0_correctness(const std::vector<block_q8_0>& baseline, con
     double max_diff = 0.0;
     for (size_t i = 0; i < baseline.size(); ++i) {
         // Check d values
-        float d_base = GGML_FP16_TO_FP32(baseline[i].d);
-        float d_test = GGML_FP16_TO_FP32(result[i].d);
+        float d_base = GGML_CPU_FP16_TO_FP32(baseline[i].d);
+        float d_test = GGML_CPU_FP16_TO_FP32(result[i].d);
         max_diff = std::max(max_diff, (double)std::abs(d_base - d_test));
         
         // Check qs values
