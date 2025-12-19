@@ -5,13 +5,13 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 # ================= 配置区域 =================
 # 根目录，根据你的描述是 /root/wmw
-BASE_DIR="${SCRIPT_DIR}/out/vec_dot_q4_series"
+BASE_DIR="${SCRIPT_DIR}/out/vec_dot_q8_series"
 
 # 模型所在的根目录
 MODEL_ROOT_DIR="/root/wmw/unsloth_riscv"
 
 # 需要测试的变体目录
-VARIANTS=("0" "1" "2" "4" "6" "14" "24" "26")
+VARIANTS=("0" "1" "2" "4" "6" "8" "12" "14" "32" "58" "60")
 
 # 日志文件名称，包含时间戳
 LOG_FILE="${BASE_DIR}/benchmark_$(date +%Y%m%d_%H%M%S).log"
@@ -48,7 +48,7 @@ for variant in "${VARIANTS[@]}"; do
     fi
     # 2. 查找 unsloth_riscv 下所有的 .gguf 文件
     # 使用 find 命令递归查找
-    find "$MODEL_ROOT_DIR" -type f -name "Qwen3-0.6B-Q4_0.gguf" | sort | while read model_path; do
+    find "$MODEL_ROOT_DIR" -type f -name "Qwen3-0.6B-Q8_0.gguf" | sort | while read model_path; do
         model_name=$(basename "$model_path")
         
         # 3. 线程数循环：从 4 开始，每次加 1，直到 4
