@@ -51,8 +51,8 @@ for variant in "${VARIANTS[@]}"; do
     find "$MODEL_ROOT_DIR" -type f -name "Qwen3-0.6B-Q8_0.gguf" | sort | while read model_path; do
         model_name=$(basename "$model_path")
         
-        # 3. 线程数循环：从 4 开始，每次加 1，直到 4
-        for t in {4..4..1}; do
+        # 3. 线程数循环：从 64 开始，每次加 1，直到 64
+        for t in {64..64..1}; do
             
             # 4. 每个配置重复执行两次 (Run 1, Run 2)
             for run_idx in 1 2; do
