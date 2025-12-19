@@ -8,7 +8,7 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 BASE_DIR="${SCRIPT_DIR}/out/vec_dot_q4_series"
 
 # 模型所在的根目录
-MODEL_ROOT_DIR="/home/openkylin/model/unsloth"
+MODEL_ROOT_DIR="/root/wmw/unsloth_riscv"
 
 # 需要测试的变体目录
 VARIANTS=("0" "1" "2" "4" "6" "14" "24" "26")
