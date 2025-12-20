@@ -48,7 +48,7 @@ for variant in "${VARIANTS[@]}"; do
     fi
     # 2. 查找 unsloth_riscv 下所有的 .gguf 文件
     # 使用 find 命令递归查找
-    find "$MODEL_ROOT_DIR" -type f -name "Qwen3" | sort | while read model_path; do
+    find "$MODEL_ROOT_DIR" -type f -name "Qwen3*" | sort | while read model_path; do
         model_name=$(basename "$model_path")
         
         # 3. 线程数循环：从 4 开始，每次加 1，直到 4
