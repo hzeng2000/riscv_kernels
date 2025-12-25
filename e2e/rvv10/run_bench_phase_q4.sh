@@ -14,7 +14,7 @@ MODEL_ROOT_DIR="/root/wmw/unsloth_riscv"
 VARIANTS=("vw" "ppbest" "tgbest")
 
 # 日志文件名称，包含时间戳
-LOG_FILE="${BASE_DIR}/benchmark_phase_$(date +%Y%m%d_%H%M%S).log"
+LOG_FILE="${BASE_DIR}/benchmark_phase_q4_$(date +%Y%m%d_%H%M%S).log"
 
 # ===========================================
 
