@@ -11,7 +11,7 @@ BASE_DIR="${SCRIPT_DIR}/out/final_unzfh"
 MODEL_ROOT_DIR="/root/wmw/unsloth_riscv"
 
 # 需要测试的变体目录
-VARIANTS=("scalar" "intr" "vw")
+VARIANTS=("scalar" "intr" "vw" "vw_silu")
 
 # 日志文件名称，包含时间戳
 LOG_FILE="${BASE_DIR}/benchmark_unzfh_$(date +%Y%m%d_%H%M%S).log"
